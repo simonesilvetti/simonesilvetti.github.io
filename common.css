@@ -1,0 +1,182 @@
+html, body, div, span, applet, object, iframe, h1, h2,h3,  h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	background: transparent;
+  }
+
+
+
+#main {	
+	float: right;
+	width: 83%;
+  padding: 30px 0 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+	}
+
+#main #branding a {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 4em;
+  line-height: 1;
+  letter-spacing: 2px;
+  background: #ffffff;
+  color: rgba(191,0,0, 0.8);
+  text-shadow: 1px 4px 6px #ffffff, 0 0 0 #000000, 1px 4px 6px #ffffff;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+#branding,span#branding-tag {
+ /* font-family: 'Cabin Sketch', cursive;
+font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Cabin Sketch';
+  color: rgba(191,0,0, 0.8);
+
+}
+a:link,
+a:visited {
+	text-decoration: none;
+	font-weight: normal;
+	color: black;
+	-webkit-transition: color .3 ease;
+	-moz-transition: color .3 ease;
+	-o-transition: color .3 ease;
+	transition: color .3 ease;
+	}
+a:hover {
+	color: rgba(191,0,0, 0.8);
+  }
+  
+#main #branding span#branding-tag {	
+    display: block;
+    margin-top: 2px;
+    font-size: 1.8em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #ffffff;
+    color: #a2a2a2;
+    }
+
+#wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0;
+	z-index: 0;
+	}
+
+/* NAV */
+
+#nav {	
+	float: left;
+	width: 15%;
+	margin: 0;
+	position: fixed;
+	text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Cabin Sketch', bold;
+  font-size: large;
+	}
+#nav #logo {	
+	margin: 30px 20px;
+	}
+#nav #logo a {
+	border: none;
+	}
+#nav #logo img {
+	height: 0;
+	}
+#nav #logo a,
+#nav #logo span {
+  margin: 16px;
+	display: block;
+	width: 78px;
+  height: 67px;
+	background: url(fig/sigma.png) no-repeat top left;
+	}
+#nav #logo a:hover,
+#nav #logo a:focus,
+#nav #logo span:hover {
+	background-position: -79.5px 0px;
+	}
+#nav ul li {
+	margin: 0 0 2px 0;
+	}
+#nav ul li a {	
+	display: block;
+	padding: 5px 0;
+	font-size: 1.2em;
+	line-height: 1;
+	text-decoration: none;
+	font-weight: normal;
+	border: none;
+	color: #000000;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	}
+#nav ul li a:hover,
+#nav ul li.active a,
+#nav ul li a:focus {	
+	color: red;
+  }
+
+#nav ul.sub-menu li, #nav li.cat-item {
+	text-transform: capitalize;
+	font-size: .85em;
+	letter-spacing: normal;
+	padding-left: 5px;
+  }
+  
+  .cards {
+    padding: 15px 0 0 0;
+  }
+  .cardsTitle{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Cabin Sketch', bold;
+  font-size: large;
+  }
+  div{
+    text-align: justify;
+  }
+  #shortBio{
+	display: table-cell;
+	padding: 0 15px 0 0;
+   
+  }
+  #bioImage{
+	display: table-cell;
+	background: url(fig/index.jpeg) no-repeat top left;
+	background-size: auto 100%;
+	width: 300px; 
+	height: 100%;
+	box-shadow: 5px 10px 8px #888888;
+
+  }
+  #cards-shortBio{
+	display: table-row;
+  }
+  #cards-shortBio-container{
+	width: 100%;
+	display: table;
+  }
+
+  .cards a:link,
+  .cards a:visited{
+	  color: #a2a2a2;
+  }
+  .cards a:focus,
+  .cards  a:hover{
+	color: red;
+}
+
+
