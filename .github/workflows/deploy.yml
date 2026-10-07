@@ -1,0 +1,49 @@
+# On every push to main: run the tests, build the static site, publish it on GitHub Pages.
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run tests
+        run: bin/rails test
+
+      - name: Build static site
+        run: bin/rails site:build
+        env:
+          RAILS_ENV: production
+          SECRET_KEY_BASE_DUMMY: 1
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

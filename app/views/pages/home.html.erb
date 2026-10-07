@@ -1,0 +1,41 @@
+<section class="pt-6 pb-4">
+  <div class="flex flex-col items-start gap-4 sm:flex-row">
+    <%= link_to about_path, class: "mx-auto block shrink-0 sm:mx-0" do %>
+      <%= image_tag site.avatar, alt: site.name, class: "size-40 rounded-full object-cover" %>
+    <% end %>
+
+    <div class="flex-1 text-center sm:text-left">
+      <h1 class="my-2 text-2xl font-bold sm:my-4 sm:text-3xl"><%= site.greeting %></h1>
+      <p><%= site.bio %></p>
+      <div class="mt-4 flex justify-center sm:justify-start">
+        <%= render "shared/social_links" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="border-border">
+
+<section class="pt-12 pb-6">
+  <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+  <ul>
+    <%= render partial: "posts/post", collection: @posts %>
+  </ul>
+  <p class="text-center">
+    <%= link_to "All Posts →", posts_path, class: "hover:text-accent" %>
+  </p>
+</section>
+
+<% if @projects.any? %>
+  <hr class="border-border">
+
+  <section class="pt-12 pb-6">
+    <h2 class="text-2xl font-semibold tracking-wide">Selected Projects</h2>
+    <ul>
+      <%= render partial: "projects/project", collection: @projects %>
+    </ul>
+    <p class="text-center">
+      <%= link_to "All Projects →", projects_path, class: "hover:text-accent" %>
+    </p>
+  </section>
+<% end %>

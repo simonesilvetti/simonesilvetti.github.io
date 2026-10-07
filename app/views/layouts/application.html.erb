@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="<%= site.language %>">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
+    <meta name="color-scheme" content="light dark">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <script>
+      // Pick the theme before the page is drawn, so it never flashes:
+      // the choice saved by the toggle button, otherwise the system preference.
+      function savedTheme() {
+        try { return localStorage.getItem("theme") } catch { return null }
+      }
+
+      function toggleTheme() {
+        const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+        document.documentElement.dataset.theme = theme
+        try { localStorage.setItem("theme", theme) } catch {}
+      }
+
+      document.documentElement.dataset.theme = savedTheme() ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    </script>
+
+    <%= stylesheet_link_tag "tailwind" %>
+  </head>
+
+  <body class="flex min-h-svh flex-col bg-background font-mono text-foreground">
+    <a href="#main-content" class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent focus:top-4">Skip to content</a>
+
+    <header class="mx-auto w-full max-w-site px-4">
+      <div class="flex flex-col items-center justify-between gap-2 py-4 sm:flex-row sm:py-6">
+        <%= link_to site.name, root_path, class: "py-1 text-2xl leading-7 font-semibold whitespace-nowrap" %>
+
+        <nav aria-label="Main">
+          <ul class="flex items-center gap-2 sm:gap-4">
+            <li><%= nav_link_to "Posts", posts_path %></li>
+            <li><%= nav_link_to "Projects", projects_path %></li>
+            <li><%= nav_link_to "Papers", papers_path %></li>
+            <li><%= nav_link_to "About", about_path %></li>
+            <li>
+              <button type="button" onclick="toggleTheme()" class="block p-1 hover:text-accent" title="Toggle light & dark" aria-label="Toggle dark mode">
+                <%= render "icons/moon", class: "size-6 dark:hidden" %>
+                <%= render "icons/sun", class: "hidden size-6 dark:block" %>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="border-border">
+    </header>
+
+    <main id="main-content" class="mx-auto w-full max-w-site px-4 pb-12">
+      <%= yield %>
+    </main>
+
+    <footer class="mx-auto mt-auto w-full max-w-site">
+      <hr class="border-border">
+      <div class="flex flex-col items-center justify-between px-4 py-6 sm:flex-row-reverse sm:px-0 sm:py-4">
+        <%= render "shared/social_links" %>
+        <p class="my-2">© <%= Date.current.year %> <%= site.name %></p>
+      </div>
+    </footer>
+  </body>
+</html>

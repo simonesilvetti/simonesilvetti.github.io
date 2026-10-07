@@ -1,0 +1,28 @@
+<% content_for :title, @post.title %>
+<% content_for :description, @post.description %>
+
+<div class="mt-8">
+  <%= link_to "← All posts", posts_path, class: "mb-4 inline-block opacity-80 hover:text-accent" %>
+
+  <h1 class="text-2xl font-bold text-accent sm:text-3xl"><%= @post.title %></h1>
+  <div class="mt-2 mb-6 flex items-center gap-3">
+    <time datetime="<%= @post.date.iso8601 %>" class="text-sm italic opacity-80 sm:text-base"><%= format_date(@post.date) %></time>
+    <span class="opacity-30">•</span>
+    <span class="text-sm opacity-60"><%= @post.reading_time %> min read</span>
+  </div>
+
+  <article class="prose mt-6 max-w-none">
+    <%= @post.html %>
+  </article>
+
+  <% if @post.tags.any? %>
+    <ul class="mt-8 flex flex-wrap gap-3 text-sm opacity-80">
+      <% @post.tags.each do |tag| %>
+        <li>#<%= tag %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <hr class="my-8 border-border">
+  <%= link_to "← All posts", posts_path, class: "opacity-80 hover:text-accent" %>
+</div>

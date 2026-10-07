@@ -1,0 +1,10 @@
+<li class="my-8">
+  <%= link_to post_path(post), class: "inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 hover:underline" do %>
+    <%= content_tag local_assigns.fetch(:heading, :h3), post.title %>
+  <% end %>
+  <div class="mb-3 flex items-center gap-3 text-sm italic opacity-80">
+    <time datetime="<%= post.date.iso8601 %>"><%= format_date(post.date) %></time>
+    <span>• <%= post.reading_time %> min read</span>
+  </div>
+  <p class="opacity-80"><%= post.description %></p>
+</li>

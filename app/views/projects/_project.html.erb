@@ -1,0 +1,9 @@
+<li class="my-8">
+  <%= link_to project_path(project), class: "inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 hover:underline" do %>
+    <%= content_tag local_assigns.fetch(:heading, :h3), project.title %>
+  <% end %>
+  <% if project.technologies.any? %>
+    <p class="mb-3 text-sm italic opacity-80"><%= project.technologies.join(" · ") %></p>
+  <% end %>
+  <p class="opacity-80"><%= project.description %></p>
+</li>

@@ -1,0 +1,18 @@
+# Your personal data, in one place.
+# Restart the server after changing this file.
+shared:
+  name: "Simone Silvetti"
+  description: "Personal website"
+  language: "en"
+
+  # Home page introduction
+  greeting: "Hi, I'm Simone!"
+  bio: "Developer and researcher. Now at the University of Trieste, previously at Esteco."
+
+  # Profile picture: a file in app/assets/images
+  avatar: "avatar.jpg"
+
+  # Leave a value empty ("") to hide its link
+  github: "https://github.com/simonesilvetti"
+  linkedin: "https://www.linkedin.com/in/USERNAME"
+  email: "simonesilvetti@gmail.com"

@@ -1,0 +1,17 @@
+<div class="flex flex-wrap gap-1">
+  <% if site.github.present? %>
+    <%= link_to site.github, class: "inline-block p-2 hover:rotate-6 hover:text-accent sm:p-1", title: "GitHub" do %>
+      <%= render "icons/github" %><span class="sr-only">GitHub</span>
+    <% end %>
+  <% end %>
+  <% if site.linkedin.present? %>
+    <%= link_to site.linkedin, class: "inline-block p-2 hover:rotate-6 hover:text-accent sm:p-1", title: "LinkedIn" do %>
+      <%= render "icons/linkedin" %><span class="sr-only">LinkedIn</span>
+    <% end %>
+  <% end %>
+  <% if site.email.present? %>
+    <%= mail_to site.email, class: "inline-block p-2 hover:rotate-6 hover:text-accent sm:p-1", title: "Email" do %>
+      <%= render "icons/mail" %><span class="sr-only">Email</span>
+    <% end %>
+  <% end %>
+</div>

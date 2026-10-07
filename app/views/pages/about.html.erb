@@ -1,0 +1,20 @@
+<% content_for :title, "About" %>
+
+<div class="mt-8">
+  <h1 class="text-2xl font-semibold sm:text-3xl">About</h1>
+
+  <div class="prose mt-6 max-w-none">
+    <p><%= site.bio %></p>
+
+    <%# Write about yourself here: plain HTML, styled automatically by the "prose" class. %>
+    <p>In this space I will write about my projects and my personal take on a few topics. The site is deliberately "gen-ai-free": all the content will be written by hand.</p>
+    <p>Is it inefficient? Yes, on purpose.</p>
+    <p>Claude was used only to generate the site in Ruby on Rails. An excuse to study this framework and build my personal website at the same time!</p>
+
+    <h2>Contact</h2>
+  </div>
+
+  <div class="mt-4">
+    <%= render "shared/social_links" %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<li class="my-8">
+  <%= link_to paper_path(paper), class: "inline-block text-lg font-medium text-accent decoration-dashed underline-offset-4 hover:underline" do %>
+    <h3 class="text-lg font-medium"><%= paper.title %></h3>
+  <% end %>
+  <p class="text-sm italic opacity-80">
+    <%= paper.venue %><% if paper.pages.present? %> · pp. <%= paper.pages %><% end %>
+  </p>
+  <p class="mb-3 text-sm opacity-80"><%= paper_authors(paper) %></p>
+  <p class="opacity-80"><%= paper.description %></p>
+</li>

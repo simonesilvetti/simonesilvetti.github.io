@@ -1,0 +1,24 @@
+<% content_for :title, @project.title %>
+<% content_for :description, @project.description %>
+
+<div class="mt-8">
+  <%= link_to "← All projects", projects_path, class: "mb-4 inline-block opacity-80 hover:text-accent" %>
+
+  <h1 class="text-2xl font-bold text-accent sm:text-3xl"><%= @project.title %></h1>
+  <div class="mt-2 mb-6 flex flex-wrap items-center gap-3 text-sm">
+    <% if @project.technologies.any? %>
+      <span class="italic opacity-80"><%= @project.technologies.join(" · ") %></span>
+    <% end %>
+    <% if @project.github %>
+      <span class="opacity-30">•</span>
+      <%= link_to "Source on GitHub", @project.github, class: "underline decoration-dashed underline-offset-4 hover:text-accent" %>
+    <% end %>
+  </div>
+
+  <article class="prose mt-6 max-w-none">
+    <%= @project.html %>
+  </article>
+
+  <hr class="my-8 border-border">
+  <%= link_to "← All projects", projects_path, class: "opacity-80 hover:text-accent" %>
+</div>
