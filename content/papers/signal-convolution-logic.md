@@ -10,6 +10,7 @@ authors:
 venue: "International Symposium on Automated Technology for Verification and Analysis (ATVA)"
 pages: "267–283"
 url: "https://doi.org/10.1007/978-3-030-01090-4_16"
+preprint: "https://arxiv.org/abs/1806.00238"
 ---
 
 ## The idea
@@ -20,4 +21,9 @@ Classic temporal operators ask whether something holds *always* or *eventually* 
 
 ## The contribution
 
-The paper introduces the logic and demonstrates that it is a suitable formalism to effectively express this kind of property.
+- The logic is shown to be a suitable formalism to express **non-functional requirements** of cyber-physical systems with noisy and irregular behaviours.
+- Both a **qualitative and a quantitative semantics** are defined, together with an efficient **monitoring procedure**.
+
+## Case study
+
+SCL is used to monitor **artificial pancreas** controllers, which automate insulin delivery for patients with type 1 diabetes.

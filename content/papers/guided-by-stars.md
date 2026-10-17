@@ -28,3 +28,5 @@ The model optimises accuracy and interpretability together, producing:
 ## Results
 
 Experiments on diverse real-world benchmarks show competitive accuracy together with logically faithful explanations.
+
+The paper has been submitted to the *Journal of Artificial Intelligence Research* (JAIR). It extends [Towards Interpretable Concept Learning](/papers/towards-interpretable-concept-learning).

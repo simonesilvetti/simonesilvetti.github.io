@@ -9,11 +9,7 @@
   <p class="mt-2 text-sm italic opacity-80">
     <%= @paper.venue %>, <%= @paper.date.year %><% if @paper.pages.present? %> · pp. <%= @paper.pages %><% end %>
   </p>
-  <% if @paper.url %>
-    <p class="mt-2 text-sm">
-      <%= link_to "Read the paper →", @paper.url, class: "underline decoration-dashed underline-offset-4 hover:text-accent" %>
-    </p>
-  <% end %>
+  <%= render "papers/links", paper: @paper %>
 
   <article class="prose mt-6 max-w-none">
     <%= @paper.html %>

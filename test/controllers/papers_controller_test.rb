@@ -7,6 +7,8 @@ class PapersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "h2", "2024"
     assert_select "li h3", "Sample paper"
+    assert_select "li a[href=?]", "https://doi.org/10.1234/sample"
+    assert_select "li a[href=?]", "https://arxiv.org/abs/1234.56789"
   end
 
   test "show renders the paper with your name in bold" do
@@ -16,6 +18,7 @@ class PapersControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1", "Sample paper"
     assert_select "strong", Rails.configuration.x.site.name
     assert_select "a[href=?]", "https://doi.org/10.1234/sample"
+    assert_select "a[href=?]", "https://arxiv.org/abs/1234.56789"
     assert_select "article h2", "Details"
   end
 

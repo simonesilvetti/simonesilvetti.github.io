@@ -28,6 +28,18 @@
 
       document.documentElement.dataset.theme = savedTheme() ||
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+
+      // Email links carry the address reversed and split (email_link_data):
+      // it becomes a real mailto: link only when a person points at, focuses or taps it.
+      for (const type of [ "pointerover", "focusin", "click" ]) {
+        document.addEventListener(type, (event) => {
+          const link = event.target.closest?.("[data-email-user]")
+          if (!link) return
+
+          const reverse = (text) => [ ...text ].reverse().join("")
+          link.href = `mailto:${reverse(link.dataset.emailUser)}@${reverse(link.dataset.emailDomain)}`
+        })
+      }
     </script>
 
     <%= stylesheet_link_tag "tailwind" %>
@@ -41,9 +53,10 @@
         <%= link_to site.name, root_path, class: "py-1 text-2xl leading-7 font-semibold whitespace-nowrap" %>
 
         <nav aria-label="Main">
-          <ul class="flex items-center gap-2 sm:gap-4">
-            <li><%= nav_link_to "Posts", posts_path %></li>
-            <li><%= nav_link_to "Projects", projects_path %></li>
+          <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-4">
+            <% if Post.any? %><li><%= nav_link_to "Posts", posts_path %></li><% end %>
+            <% if Project.any? %><li><%= nav_link_to "Projects", projects_path %></li><% end %>
+            <li><%= nav_link_to "Research", research_path %></li>
             <li><%= nav_link_to "Papers", papers_path %></li>
             <li><%= nav_link_to "About", about_path %></li>
             <li>

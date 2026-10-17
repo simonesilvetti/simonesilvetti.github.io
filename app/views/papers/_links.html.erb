@@ -1,0 +1,10 @@
+<% if paper.url || paper.preprint %>
+  <p class="mt-2 flex flex-wrap gap-x-6 text-sm">
+    <% if paper.url %>
+      <%= link_to "Read the paper →", paper.url, class: "underline decoration-dashed underline-offset-4 hover:text-accent" %>
+    <% end %>
+    <% if paper.preprint %>
+      <%= link_to "Free preprint →", paper.preprint, class: "underline decoration-dashed underline-offset-4 hover:text-accent" %>
+    <% end %>
+  </p>
+<% end %>

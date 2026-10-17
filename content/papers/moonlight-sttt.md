@@ -25,6 +25,6 @@ MoonLight is written in Java and can be used as a standalone command line tool, 
 
 ## This paper
 
-The journal version describes the tool, its interfaces and its scripting language, using a sensor network and a bike sharing system as examples. Performance is evaluated against tools specialised in monitoring temporal properties only.
+The journal version describes the tool, its interfaces and its scripting language, using a sensor network and a bike sharing system as examples. Performance is evaluated against tools specialised in monitoring temporal properties only, and by monitoring spatio-temporal requirements on dynamical and spatial graphs of different sizes.
 
 It extends the [RV 2020 tool paper](/papers/moonlight).

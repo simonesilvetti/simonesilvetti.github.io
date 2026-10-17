@@ -17,6 +17,13 @@ module ApplicationHelper
     date.strftime("%-d %b, %Y")
   end
 
+  # The email address split in two and reversed, so bots reading the HTML
+  # find no "@" and no "mailto:". The layout script puts it back together.
+  def email_link_data(email)
+    user, domain = email.split("@", 2)
+    { email_user: user.reverse, email_domain: domain.reverse }
+  end
+
   # Header link, underlined while you are on that section.
   def nav_link_to(name, path)
     active = request.path == path || request.path.start_with?("#{path}/")

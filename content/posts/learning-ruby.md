@@ -1,4 +1,5 @@
 ---
+draft: true   # remove this line to publish
 title: "Learning Ruby"
 date: 2026-10-07
 description: "Notes on my journey with Ruby"

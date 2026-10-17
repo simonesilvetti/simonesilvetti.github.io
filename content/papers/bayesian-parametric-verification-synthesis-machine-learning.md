@@ -8,7 +8,7 @@ authors:
   - Simone Silvetti
 venue: "Winter Simulation Conference (WSC)"
 pages: "381–394"
-url: "https://ieeexplore.ieee.org/abstract/document/8632443/"
+url: "https://doi.org/10.1109/WSC.2018.8632443"
 ---
 
 ## The problem
@@ -28,4 +28,4 @@ The approach has been used to solve several tasks efficiently:
 
 ## This paper
 
-A tutorial that introduces the basic ideas of the approach.
+A tutorial that introduces the basic ideas of the approach and gives an overview of its different applications.

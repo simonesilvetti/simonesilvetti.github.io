@@ -23,4 +23,6 @@ The thesis uses machine learning, active learning and optimisation to address th
 
 - **Signal measure logic**, a new temporal logic suited to non-functional requirements (see also [Signal Convolution Logic](/papers/signal-convolution-logic));
 - evolutionary algorithms and Signal Temporal Logic for a **supervised classification** problem (see [A robust genetic algorithm](/papers/robust-genetic-algorithm-temporal-specifications));
-- a **system design** problem with multiple conflicting requirements (see [Logic-based multi-objective design](/papers/multi-objective-design-chemical-reaction-networks)).
+- a **system design** problem with multiple conflicting requirements (see [Logic-based multi-objective design](/papers/multi-objective-design-chemical-reaction-networks));
+- **active learning** based on Gaussian Processes for **falsification** problems in the automotive field (see [An active learning approach to falsification](/papers/active-learning-falsification-black-box-cps));
+- a **threshold synthesis** problem, with an epidemics case study (see [Bayesian statistical parameter synthesis](/papers/bayesian-statistical-parameter-synthesis)).

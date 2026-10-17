@@ -11,6 +11,7 @@ authors:
 venue: "ACM International Conference on Hybrid Systems: Computation and Control (HSCC)"
 pages: "1–11"
 url: "https://doi.org/10.1145/3716863.3718033"
+preprint: "https://arxiv.org/abs/2503.21906"
 ---
 
 ## The setting
@@ -21,4 +22,8 @@ Modern cyber-physical systems (CPS) are often made of many networked components 
 
 The paper defines an **automaton semantics** for the Spatio-Temporal Reach and Escape Logic (**STREL**), a formal logic for expressing and monitoring spatio-temporal requirements over mobile, spatially distributed CPS, reasoning on dynamic weighted graphs.
 
-STREL already has well-defined qualitative and quantitative semantics; this work proposes a new construction based on **alternating finite automata** to monitor it.
+STREL already has well-defined qualitative and quantitative semantics; this work proposes a new construction of **(weighted) alternating finite automata** from STREL specifications that efficiently encodes both.
+
+## Results
+
+The automaton semantics is used for both **offline and online monitoring** of STREL specifications, demonstrated on a simulated **drone swarm**.

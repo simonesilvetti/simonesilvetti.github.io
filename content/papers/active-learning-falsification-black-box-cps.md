@@ -9,6 +9,7 @@ authors:
 venue: "International Conference on Integrated Formal Methods (iFM)"
 pages: "3–17"
 url: "https://doi.org/10.1007/978-3-319-66845-1_1"
+preprint: "https://arxiv.org/abs/1705.01879"
 ---
 
 ## The problem
@@ -23,4 +24,4 @@ Falsification of black box cyber-physical systems with techniques from **active 
 
 ## Results
 
-A considerable gain in computational effort, obtained by reducing the number of model simulations needed.
+A considerable gain in computational effort, obtained by reducing the number of model simulations needed. The approach is evaluated on a challenging, industrial-level **automotive** benchmark.

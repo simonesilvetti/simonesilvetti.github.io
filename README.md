@@ -29,7 +29,7 @@ Un esempio concreto, aprendo `/posts/imparare-ruby`:
 | `app/views/layouts/application.html.erb` | Header, footer, script del tema |
 | `app/views/pages/home.html.erb` | La homepage |
 | `app/assets/tailwind/application.css` | Colori, font, larghezza della colonna, stile degli articoli |
-| `content/posts/`, `content/projects/`, `content/papers/` | I contenuti |
+| `content/posts/`, `content/projects/`, `content/papers/`, `content/pages/` | I contenuti |
 
 ## Installazione
 
@@ -60,9 +60,11 @@ I file Markdown vengono riletti a ogni richiesta: aggiungi, modifica o elimina u
 ## Informazioni personali
 
 Tutto è in `config/site.yml`: nome, descrizione (meta description), saluto, biografia, foto, GitHub, LinkedIn, email.
+L'email non compare mai nell'HTML, così i bot non la raccolgono: la pagina contiene solo i due pezzi dell'indirizzo scritti al contrario, e lo script nel layout costruisce il link `mailto:` quando qualcuno passa sopra l'icona, ci arriva con la tastiera o la tocca.
 Lascia un link vuoto (`""`) per nasconderlo. Dopo aver modificato il file **riavvia il server**.
 
-Il testo della pagina About è in `app/views/pages/about.html.erb`.
+Il testo della pagina About è in `content/pages/about.md` e quello della pagina Research in `content/pages/research.md`, in Markdown come i post (nel front matter basta `title`, la data non serve; `description` è facoltativa e finisce nel meta tag description, altrimenti si usa quella di `config/site.yml`).
+Nella pagina About i link social sono aggiunti in fondo da soli.
 
 ### Foto profilo
 
@@ -98,7 +100,7 @@ Oggi ho iniziato a studiare Ruby.
 
 - `title` e `date` (formato `AAAA-MM-GG`) sono obbligatori; `description` e `tags` sono facoltativi.
 - La riga `# Titolo` iniziale è facoltativa: se c'è viene saltata, perché la pagina mostra già il titolo.
-- Gli articoli sono ordinati per data, dal più recente. La homepage mostra gli ultimi 5.
+- Gli articoli sono ordinati per data, dal più recente. La homepage mostra gli ultimi 5 articoli e gli ultimi 3 papers.
 - Il tempo di lettura è calcolato a 200 parole al minuto.
 
 Il Markdown supporta titoli, liste, link, immagini, citazioni, blocchi di codice, tabelle e testo barrato (GitHub Flavored Markdown).
@@ -107,6 +109,14 @@ Per le immagini, mettile in `public/images/` e scrivi `![descrizione](/images/fo
 ### Modificare o eliminare un articolo
 
 Modifica il file `.md` per cambiare l'articolo, eliminalo per toglierlo dal sito. Non c'è altro da fare.
+
+### Bozze
+
+Con `draft: true` nel front matter un file resta nella cartella ma il sito lo ignora: non compare negli elenchi e la sua pagina dà 404.
+Vale per articoli, progetti e papers. Per pubblicarlo togli la riga.
+
+Una sezione senza file pubblicati (vuota o con sole bozze) sparisce da sola: niente voce nel menu, niente blocco in homepage
+e la sua pagina non viene generata nel sito statico. Ora articoli e progetti sono tutti bozze di esempio, quindi Posts e Projects sono nascosti.
 
 ### Se un file non è valido
 
@@ -148,6 +158,7 @@ authors:
 venue: "International Symposium on Automated Technology for Verification and Analysis (ATVA)"
 pages: "267–283"            # facoltativo
 url: "https://doi.org/10.1007/978-3-030-01090-4_16"   # facoltativo, solo https
+preprint: "https://arxiv.org/abs/1806.00238"          # facoltativo, versione gratuita (arXiv, repository), solo https
 ---
 
 Descrizione dettagliata, visibile nella pagina del paper.

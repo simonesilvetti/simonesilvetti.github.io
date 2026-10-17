@@ -2,7 +2,7 @@
 # Restart the server after changing this file.
 shared:
   name: "Simone Silvetti"
-  description: "Personal website"
+  description: "Simone Silvetti, postdoctoral researcher at the University of Trieste working on machine learning and formal methods for cyber-physical systems."
   language: "en"
 
   # Home page introduction
@@ -14,5 +14,5 @@ shared:
 
   # Leave a value empty ("") to hide its link
   github: "https://github.com/simonesilvetti"
-  linkedin: "https://www.linkedin.com/in/USERNAME"
+  linkedin: "https://www.linkedin.com/in/simonesilvetti/"
   email: "simonesilvetti@gmail.com"

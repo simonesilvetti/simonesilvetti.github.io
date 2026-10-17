@@ -1,4 +1,5 @@
 ---
+draft: true   # remove this line to publish
 title: "First post"
 date: 2026-09-20
 description: "Why I started this blog and what I will write about."

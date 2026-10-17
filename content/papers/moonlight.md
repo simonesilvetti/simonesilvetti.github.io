@@ -11,6 +11,7 @@ authors:
 venue: "International Conference on Runtime Verification (RV)"
 pages: "417–428"
 url: "https://doi.org/10.1007/978-3-030-60508-7_23"
+preprint: "https://arxiv.org/abs/2104.14333"
 ---
 
 ## The tool

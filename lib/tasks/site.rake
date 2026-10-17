@@ -13,7 +13,10 @@ namespace :site do
     output = Rails.root.join("out")
     FileUtils.rm_rf(output)
 
-    paths = [ routes.root_path, routes.about_path, routes.posts_path, routes.projects_path, routes.papers_path ] +
+    # A section without published files (only drafts, or none) is left out.
+    paths = [ routes.root_path, routes.about_path, routes.research_path, routes.papers_path ] +
+      (Post.any? ? [ routes.posts_path ] : []) +
+      (Project.any? ? [ routes.projects_path ] : []) +
       Post.all.map { routes.post_path(it) } +
       Project.all.map { routes.project_path(it) } +
       Paper.all.map { routes.paper_path(it) }

@@ -1,4 +1,5 @@
 ---
+draft: true   # remove this line to publish
 title: "Rails and Hotwire"
 date: 2026-10-01
 description: "A first look at Turbo and Stimulus, the Rails frontend without JavaScript frameworks."

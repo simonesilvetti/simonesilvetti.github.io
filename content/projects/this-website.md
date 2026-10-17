@@ -1,4 +1,5 @@
 ---
+draft: true   # remove this line to publish
 title: "This website"
 date: 2026-09-15
 description: "Personal blog and portfolio: Rails, Markdown and no database."

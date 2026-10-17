@@ -23,4 +23,6 @@ This paper extends that language in three directions:
 2. **A filtering operator** for sliding windows, restricting the aggregation to the signal segments that satisfy a given condition.
 3. **An efficient online monitoring algorithm** for the extended logic.
 
-The logic is evaluated on two case studies.
+## Case studies
+
+The logic is tested on two case studies: an **artificial pancreas** controller and the monitoring of **outdoor weather events**. Code and results are available as an [artifact on Zenodo](https://doi.org/10.5281/zenodo.18977741).

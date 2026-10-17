@@ -8,6 +8,7 @@ authors:
 venue: "International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS)"
 pages: "396–413"
 url: "https://doi.org/10.1007/978-3-319-89963-3_23"
+preprint: "https://hdl.handle.net/11368/2931397"
 ---
 
 ## The problem
@@ -20,4 +21,4 @@ A statistical approach based on simulation, which builds on **Smoothed Model Che
 
 ## Results
 
-The approach, implemented in Python, scales better than existing ones with respect to the size of the model's state space and the number of parameters.
+The approach, implemented in Python, scales better than existing ones with respect to the size of the model's state space and the number of parameters. It applies to linear time specifications with time constraints and to stochastic models more complex than Markov chains.

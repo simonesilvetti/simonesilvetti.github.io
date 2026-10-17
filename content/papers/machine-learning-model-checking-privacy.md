@@ -20,4 +20,8 @@ Model checking verifies whether a system exhibits a given behaviour or property,
 
 ## The question
 
-This suggests a potentially **privacy-preserving** method: specifications of a system could be queried without giving access to the system itself. The paper investigates whether this promise actually holds.
+This suggests a potentially **privacy-preserving** method: specifications of a system could be queried without giving access to the system itself.
+
+## This paper
+
+The paper studies whether the approach is feasible by **quantifying the information leakage** that machine learning model checking causes about the system being checked. The analysis is carried out for STL under different training regimes.

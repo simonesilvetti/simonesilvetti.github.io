@@ -9,6 +9,12 @@ class PostTest < ActiveSupport::TestCase
     assert_equal %w[newer-post older-post], Post.all.map(&:slug)
   end
 
+  test "drafts are never listed nor found" do
+    assert_predicate Post.from_file(Post.directory.join("draft-post.md")), :draft?
+    assert_not_includes Post.all.map(&:slug), "draft-post"
+    assert_raises(MarkdownFile::NotFound) { Post.find("draft-post") }
+  end
+
   test "the slug comes from the file name" do
     assert_equal "older-post", Post.find("older-post").to_param
   end
@@ -112,6 +118,9 @@ class PostTest < ActiveSupport::TestCase
   test "every file in content/ is valid" do
     Dir[Rails.root.join("content/{posts,projects,papers}/*.md")].each do |path|
       assert_nothing_raised { MarkdownFile.from_file(path) }
+    end
+    Dir[Rails.root.join("content/pages/*.md")].each do |path|
+      assert_nothing_raised { Page.from_file(path) }
     end
   end
 end

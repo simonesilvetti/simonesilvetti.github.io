@@ -14,17 +14,33 @@
   </div>
 </section>
 
-<hr class="border-border">
+<% if @posts.any? %>
+  <hr class="border-border">
 
-<section class="pt-12 pb-6">
-  <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-  <ul>
-    <%= render partial: "posts/post", collection: @posts %>
-  </ul>
-  <p class="text-center">
-    <%= link_to "All Posts →", posts_path, class: "hover:text-accent" %>
-  </p>
-</section>
+  <section class="pt-12 pb-6">
+    <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+    <ul>
+      <%= render partial: "posts/post", collection: @posts %>
+    </ul>
+    <p class="text-center">
+      <%= link_to "All Posts →", posts_path, class: "hover:text-accent" %>
+    </p>
+  </section>
+<% end %>
+
+<% if @papers.any? %>
+  <hr class="border-border">
+
+  <section class="pt-12 pb-6">
+    <h2 class="text-2xl font-semibold tracking-wide">Recent Papers</h2>
+    <ul>
+      <%= render partial: "papers/paper", collection: @papers %>
+    </ul>
+    <p class="text-center">
+      <%= link_to "All Papers →", papers_path, class: "hover:text-accent" %>
+    </p>
+  </section>
+<% end %>
 
 <% if @projects.any? %>
   <hr class="border-border">

@@ -11,6 +11,7 @@ authors:
 venue: "International Conference on Computational Methods in Systems Biology (CMSB)"
 pages: "188–206"
 url: "https://doi.org/10.1007/978-3-030-31304-3_10"
+preprint: "https://arxiv.org/abs/1906.10073"
 ---
 
 ## The problem

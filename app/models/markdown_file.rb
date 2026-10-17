@@ -8,8 +8,11 @@
 #
 #   Oggi ho iniziato a studiare Ruby.
 #
-# Post and Project inherit from this class. Each one reads its files from
-# its own folder: Post from content/posts, Project from content/projects.
+# With "draft: true" in the front matter the file is ignored by the site:
+# it is never listed and its page is a 404.
+#
+# Post, Project, Paper and Page inherit from this class. Each one reads its
+# files from its own folder: Post from content/posts, Page from content/pages.
 class MarkdownFile
   class NotFound < StandardError; end
   class Invalid < StandardError; end
@@ -31,14 +34,22 @@ class MarkdownFile
   attr_reader :slug, :metadata, :body
 
   def self.all
-    Dir[directory.join("*.md")].map { |path| from_file(path) }.sort_by(&:date).reverse
+    Dir[directory.join("*.md")].map { |path| from_file(path) }.reject(&:draft?).sort_by(&:date).reverse
+  end
+
+  # True when there is at least one published file: a section without any is hidden.
+  def self.any?
+    all.any?
   end
 
   def self.find(slug)
     path = directory.join("#{slug}.md")
     raise NotFound, "#{name} #{slug.inspect} not found" unless slug.to_s.match?(SLUG_FORMAT) && path.file?
 
-    from_file(path)
+    file = from_file(path)
+    raise NotFound, "#{name} #{slug.inspect} is a draft" if file.draft?
+
+    file
   end
 
   def self.directory
@@ -56,7 +67,7 @@ class MarkdownFile
     @metadata, @body = split_front_matter(text)
 
     raise Invalid, "title is missing" if title.blank?
-    raise Invalid, "date is missing or invalid (use YYYY-MM-DD)" unless date
+    raise Invalid, "date is missing or invalid (use YYYY-MM-DD)" if date_required? && !date
   end
 
   def title
@@ -71,6 +82,10 @@ class MarkdownFile
     @date ||= Date.iso8601(metadata["date"].to_s)
   rescue Date::Error
     nil
+  end
+
+  def draft?
+    metadata["draft"] == true
   end
 
   def reading_time
@@ -90,6 +105,10 @@ class MarkdownFile
   end
 
   private
+    def date_required?
+      true
+    end
+
     # A link from the front matter, only if https: a "javascript:" URL never reaches a page.
     def https_url(key)
       url = metadata[key].to_s

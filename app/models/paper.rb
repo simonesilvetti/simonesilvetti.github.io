@@ -15,4 +15,9 @@ class Paper < MarkdownFile
   def url
     https_url("url")
   end
+
+  # Free version of the paper (arXiv, institutional repository)
+  def preprint
+    https_url("preprint")
+  end
 end

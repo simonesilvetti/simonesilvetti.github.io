@@ -10,6 +10,7 @@ authors:
 venue: "International Conference on Quantitative Evaluation of Systems (QEST)"
 pages: "323–338"
 url: "https://doi.org/10.1007/978-3-319-99154-2_20"
+preprint: "https://arxiv.org/abs/1711.06202"
 ---
 
 ## The problem
@@ -25,4 +26,7 @@ A systematic, two-step procedure that synthesises both the **structure** and the
 
 ## Results
 
-The method is compared with previous work and with a recent decision-tree based method, on two case studies, including anomalous trajectory detection in naval surveillance.
+The method is compared with previous work and with a recent decision-tree based method, on two case studies:
+
+- anomalous trajectory detection in a **naval surveillance** system;
+- the characterisation of **ineffective respiratory effort**.

@@ -1,6 +1,6 @@
 ---
 title: "Time Robustness for Point-Based Semantics of Metric Interval Temporal Logic"
-date: 2026-01-01
+date: 2026-07-20
 description: "A quantitative notion of time robustness for MITL over timestamped events, stable under small timing perturbations."
 authors:
   - Simone Silvetti
@@ -10,7 +10,7 @@ authors:
   - Laura Nenzi
 venue: "International Conference on Principles of Knowledge Representation and Reasoning (KR)"
 pages: "589–599"
-url: "https://ivancomp.github.io/assets/file/KR.pdf"
+url: "https://doi.org/10.24963/kr.2026/56"
 ---
 
 ## The problem

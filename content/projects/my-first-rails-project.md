@@ -1,4 +1,5 @@
 ---
+draft: true   # remove this line to publish
 title: "My first Rails project"
 date: 2026-10-07
 description: "A small project built with Ruby on Rails"
